@@ -23,16 +23,16 @@
 <body>
   <iframe id="gameFrame"></iframe>
 
-  <script>
-    const urlParams = new URLSearchParams(window.location.search);
-    const gameUrl = urlParams.get("gameurl");
+<script>
+  const urlParams = new URLSearchParams(window.location.search);
+  const gameUrl = urlParams.get("gameurl");
 
-    if (!gameUrl) {
-      alert("Game URL not provided!");
-      window.location.href = "/IXL-ela-arena/";
-    } else {
-      document.getElementById("gameFrame").src = gameUrl;
-    }
-  </script>
+  if (!gameUrl) {
+    alert("Game URL not provided!");
+    window.location.href = "/IXL-ela-arena/";
+  } else {
+    document.getElementById("gameFrame").src = gameUrl;
+  }
+</script>
 </body>
 </html>
