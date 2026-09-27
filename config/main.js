@@ -10,7 +10,6 @@ var subtext = "v1.2"; // set the subtext
 // END CONFIG
 // DO NOT MODIFY IF YOU DO NOT KNOW WHAT YOUR DOING!
 
-import "/./config/custom.js";
 
 var serverUrl1 = "";
 var currentPageTitle = document.title;
