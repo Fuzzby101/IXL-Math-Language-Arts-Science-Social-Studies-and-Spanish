@@ -1,24 +1,14 @@
-// This changes the title of your site
+var sitename = "native.";
+var subtext = "v1.2";
 
-var sitename = "native."; // Change this to change the name of your website.
-var subtext = "v1.2"; // set the subtext
-
-// more settings in main.css
-
-
-
-// END CONFIG
-// DO NOT MODIFY IF YOU DO NOT KNOW WHAT YOUR DOING!
-
-
-var serverUrl1 = "";
 var currentPageTitle = document.title;
 document.title = `${currentPageTitle} | ${sitename}`;
-let gamesData = []; 
+
+let gamesData = [];
 
 function displayFilteredGames(filteredGames) {
   const gamesContainer = document.getElementById("gamesContainer");
-  gamesContainer.innerHTML = ""; 
+  gamesContainer.innerHTML = "";
 
   filteredGames.forEach((game) => {
     const gameDiv = document.createElement("div");
@@ -27,8 +17,10 @@ function displayFilteredGames(filteredGames) {
     const gameImage = document.createElement("img");
     gameImage.src = `${game.url}/${game.image}`;
     gameImage.alt = game.name;
+
     gameImage.onclick = () => {
-      window.location.href = `play.html?gameurl=${game.url}/`;
+      window.location.href =
+        `play.html?gameurl=${encodeURIComponent(game.url + "/")}`;
     };
 
     const gameName = document.createElement("p");
@@ -40,32 +32,36 @@ function displayFilteredGames(filteredGames) {
   });
 }
 
-
 function handleSearchInput() {
   const searchInputValue = document
     .getElementById("searchInput")
     .value.toLowerCase();
+
   const filteredGames = gamesData.filter((game) =>
     game.name.toLowerCase().includes(searchInputValue)
   );
+
   displayFilteredGames(filteredGames);
 }
 
-
-fetch("./config/games.json") 
-  .then((response) => response.json())
+fetch("./config/games.json")
+  .then((response) => {
+    if (!response.ok) {
+      throw new Error(`games.json failed to load: ${response.status}`);
+    }
+    return response.json();
+  })
   .then((data) => {
     gamesData = data;
-    displayFilteredGames(data); 
+    displayFilteredGames(data);
   })
-  .catch((error) => console.error("Error fetching games:", error));
-
+  .catch((error) => {
+    console.error("Error loading games:", error);
+  });
 
 document
   .getElementById("searchInput")
   .addEventListener("input", handleSearchInput);
 
-document.getElementById("title").innerHTML = `${sitename}`;
-
-document.getElementById("subtitle").innerHTML = `${subtext}`
-
+document.getElementById("title").innerHTML = sitename;
+document.getElementById("subtitle").innerHTML = subtext;
