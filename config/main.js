@@ -12,7 +12,7 @@ var subtext = "v1.2"; // set the subtext
 
 import "/./config/custom.js";
 
-var serverUrl1 = "https://gms.parcoil.com";
+var serverUrl1 = "";
 var currentPageTitle = document.title;
 document.title = `${currentPageTitle} | ${sitename}`;
 let gamesData = []; 
@@ -26,7 +26,7 @@ function displayFilteredGames(filteredGames) {
     gameDiv.classList.add("game");
 
     const gameImage = document.createElement("img");
-    gameImage.src = `${serverUrl1}/${game.url}/${game.image}`;
+    gameImage.src = `${game.url}/${game.image}`;
     gameImage.alt = game.name;
     gameImage.onclick = () => {
       window.location.href = `play.html?gameurl=${game.url}/`;
