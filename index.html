@@ -3,36 +3,47 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>IXL | Dashboard</title>
+<title>IXL | Dashboard</title>
+<link rel="icon" type="image/png" href="cyanide.png" />
 <link rel="stylesheet" href="config/main.css" />
 <script src="config/main.js" type="module"></script>
-    <!-- Custom style block to fix the spacing gap -->
-    <style>
-      #title {
-        margin-bottom: 2px; /* Pulls v1 closer to the logo */
-      }
-      #title img {
-        display: block;
-        margin: 0 auto;
-      }
-      #subtitle {
-        margin-top: 0;      /* Removes top gap above v1 */
-        margin-bottom: 15px; /* Pulls the search bar closer to v1 */
-      }
-    </style>
+<!-- Custom style block to fix the spacing gap -->
+<style>
+  #title {
+    margin-bottom: 2px;
+  }
+  #title img {
+    display: block;
+    margin: 0 auto;
+  }
+  #subtitle {
+    margin-top: 0;
+    margin-bottom: 15px;
+  }
+</style>
   </head>
   <body>
     <div class="center">
-      <h1 id="title"><img src="cyanide.png" alt="cyanide" style="max-width: 400px; width: 100%; height: auto;"></h1>
-      <p id="subtitle">v1</p>
-    </div>
-    <div class="center">
-      <input type="text" id="searchInput" placeholder="Search games" />
-    </div>
-    <div id="gamesContainer"></div>
-    <div class="footer">
-      <a style="font-weight: 700">a site by </a>
-      <a style="font-weight: 700" class="link" href="https://dsc.gg">parcoil network</a>
-    </div>
+      <h1 id="title">
+        <img
+          src="cyanide.png"
+          alt="cyanide"
+          style="max-width: 400px; width: 100%; height: auto;"
+        />
+      </h1>
+  <p id="subtitle">v1</p>
+</div>
+<div class="center">
+  <input type="text" id="searchInput" placeholder="Search games" />
+</div>
+<div id="gamesContainer"></div>
+<div class="footer">
+  <a style="font-weight: 700">a site by </a>
+  <a
+    style="font-weight: 700"
+    class="link"
+    href="https://dsc.gg"
+  >parcoil network</a>
+</div>
   </body>
 </html>
