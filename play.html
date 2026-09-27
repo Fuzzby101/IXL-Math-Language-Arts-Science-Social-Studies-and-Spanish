@@ -23,18 +23,16 @@
     <iframe id="gameFrame"></iframe>
 
     <script>
-      var serverUrl1 = "https://gms.parcoil.com";
-      const queryString = window.location.search;
-      const urlParams = new URLSearchParams(queryString);
-      const gameUrl = urlParams.get("gameurl");
+const queryString = window.location.search;
+const urlParams = new URLSearchParams(queryString);
+const gameUrl = urlParams.get("gameurl");
 
-      if (!gameUrl) {
-        alert("Game URL not provided!");
-        window.location.href = "/"; // Redirect to homepage if game URL is missing
-      } else {
-        const embedUrl = `${serverUrl1}/${gameUrl}`;
-        document.getElementById("gameFrame").src = embedUrl;
-      }
+if (!gameUrl) {
+  alert("Game URL not provided!");
+  window.location.href = "/";
+} else {
+  document.getElementById("gameFrame").src = gameUrl;
+}
     </script>
   </body>
 </html>
