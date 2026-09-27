@@ -18,10 +18,9 @@ function displayFilteredGames(filteredGames) {
     gameImage.src = `${game.url}/${game.image}`;
     gameImage.alt = game.name;
 
-    gameImage.onclick = () => {
-      window.location.href =
-        `play.html?gameurl=${encodeURIComponent(game.url + "/")}`;
-    };
+gameImage.onclick = () => {
+  window.location.href =
+    `/IXL-ela-arena/play.html?gameurl=${encodeURIComponent(game.url + "/"};
 
     const gameName = document.createElement("p");
     gameName.textContent = game.name;
