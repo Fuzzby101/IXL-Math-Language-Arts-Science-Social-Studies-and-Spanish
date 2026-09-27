@@ -19,7 +19,40 @@ function displayFilteredGames(filteredGames) {
     gameImage.alt = game.name;
 
 gameImage.onclick = () => {
-  window.location.href = game.url;
+  const gameUrl = game.url;
+
+  const newTab = window.open("about:blank", "_blank");
+
+  if (newTab) {
+    newTab.document.write(`
+      <!DOCTYPE html>
+      <html>
+      <head>
+        <title>${game.name}</title>
+        <style>
+          html, body {
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+          }
+
+          iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+          }
+        </style>
+      </head>
+      <body>
+        <iframe src="${gameUrl}"></iframe>
+      </body>
+      </html>
+    `);
+
+    newTab.document.close();
+  }
 };
     const gameName = document.createElement("p");
     gameName.textContent = game.name;
