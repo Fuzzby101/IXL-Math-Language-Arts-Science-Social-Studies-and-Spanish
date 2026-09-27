@@ -1,5 +1,5 @@
-var sitename = "native.";
-var subtext = "v1.2";
+var sitename = "";
+var subtext = "v1";
 
 var currentPageTitle = document.title;
 document.title = `${currentPageTitle} | ${sitename}`;
