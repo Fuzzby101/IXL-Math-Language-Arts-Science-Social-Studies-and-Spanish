@@ -1,8 +1,6 @@
-var sitename = "";
 var subtext = "v1";
 
-var currentPageTitle = document.title;
-document.title = `${currentPageTitle} | ${sitename}`;
+
 
 let gamesData = [];
 
